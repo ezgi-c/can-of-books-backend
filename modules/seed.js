@@ -44,9 +44,9 @@ async function seed() {
 // }
 
   const myBook1 = new Book({
-    title:'kindred' ,
+    title:'Kindred' ,
     description: 'science fiction',
-    status: 'five stars'
+    status: 'five stars',
   });
 
   myBook1.save(function (err) {
