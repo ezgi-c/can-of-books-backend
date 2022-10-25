@@ -9,7 +9,8 @@ const bookSchema = new Schema({
   // schema types
   title: String,
   description: String,
-  status: String
+  status: String,
+  src: String
 });
 
 const Book = mongoose.model('Book', bookSchema);

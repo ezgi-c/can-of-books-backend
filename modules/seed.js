@@ -2,9 +2,10 @@
 
 const mongoose = require('mongoose');
 const Book = require('../models/book');
+require('dotenv').config();
 
 // connecting to our mongo database called "cats-database" using mongoose
-mongoose.connect('mongodb://localhost:27017/books-database', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_CONNECTION);
 // this is where the connection actually happens
 const db = mongoose.connection;
 // is turning the db on and checking for any errors
@@ -14,7 +15,6 @@ db.once('open', function() {
   console.log('Mongoose is connected for seeding...');
 });
 
-const Book = require('../models/book');
 
 // create a function that seeds the database
 async function seed() {
@@ -23,10 +23,11 @@ async function seed() {
   const myBook = new Book({
     title:'Cat in the hat' ,
     description: 'good',
-    status: ' amazing '
+    status: ' amazing ',
+    src: 'https://images.unsplash.com/photo-1626914623652-67f36cc25536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHIuJTIwc2V1c3N8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
   });
 
-  myBook.save(function (err) {
+   await myBook.save(function (err) {
     if (err) console.error(err);
     else console.log('saved Cat in the hat in database!');
   });
@@ -43,27 +44,21 @@ async function seed() {
 //     console.log(error);
 // }
 
-  const myBook1 = new Book({
+   await Book.create({
     title:'kindred' ,
     description: 'science fiction',
-    status: 'five stars'
+    status: 'five stars',
+    src: 'https://variety.com/wp-content/uploads/2022/01/Kindred-FX.jpg?w=681&h=383&crop=1'
   });
 
-  myBook1.save(function (err) {
-    if (err) console.error(err);
-    else console.log('saved book in database!');
-  });
 
-  const myBook2 = new Book({
+   await Book.create({
     title:'The Shinning' ,
     description: 'Horror',
-    status: 'five stars'
+    status: 'five stars',
+    src: 'https://images.unsplash.com/photo-1574099698592-9df0e9f19f3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amFjayUyMG5pY2hvbHNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
   });
 
-  myBook2.save(function (err) {
-    if (err) console.error(err);
-    else console.log('saved the shinning in database!');
-  });
 
   console.log('done seeding!');
 

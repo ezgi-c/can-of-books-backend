@@ -11,7 +11,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3002;
 
-mongoose.connect('mongodb://localhost:27017/books-database', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_CONNECTION)
 
 const db = mongoose.connection;
 
