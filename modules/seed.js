@@ -49,6 +49,7 @@ async function seed() {
     description: 'science fiction',
     status: 'five stars',
     src: 'https://variety.com/wp-content/uploads/2022/01/Kindred-FX.jpg?w=681&h=383&crop=1'
+
   });
 
 
