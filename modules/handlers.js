@@ -25,4 +25,17 @@ Handler.createBook = async (request, response, next) => {
     next(error);
   }
 };
+
+Handler.deleteBook = async (request, response, next) => {
+  try {
+    await Book.findByIdAndDelete(request.params.id);
+    // Express response objects will not forward a response body if the response status code is (204) "No Content".
+    response.status(200).send('your book is deleted!');
+  } catch(error) {
+    error.customMessage = 'Something went wrong when deleting your book: ';
+    console.error(error.customMessage + error);
+    next(error);
+  }
+};
+
 module.exports = Handler;
