@@ -9,7 +9,7 @@ const bookSchema = new Schema({
   // schema types
   title: String,
   description: String,
-  status: String,
+  status: Boolean,
   src: String
 });
 
