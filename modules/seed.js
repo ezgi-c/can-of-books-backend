@@ -23,8 +23,9 @@ async function seed() {
   const myBook = new Book({
     title:'Cat in the hat' ,
     description: 'good',
-    status: ' amazing ',
-    src: 'https://images.unsplash.com/photo-1626914623652-67f36cc25536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHIuJTIwc2V1c3N8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+    status: false,
+    src: 'https://images.unsplash.com/photo-1626914623652-67f36cc25536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHIuJTIwc2V1c3N8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    email: 'christopherwlopez89@gmail.com'
   });
 
    await myBook.save(function (err) {
@@ -47,8 +48,9 @@ async function seed() {
    await Book.create({
     title:'Kindred' ,
     description: 'science fiction',
-    status: 'five stars',
-    src: 'https://variety.com/wp-content/uploads/2022/01/Kindred-FX.jpg?w=681&h=383&crop=1'
+    status: false,
+    src: 'https://variety.com/wp-content/uploads/2022/01/Kindred-FX.jpg?w=681&h=383&crop=1',
+    email: 'ezgicoban3261@gmail.com'
 
   });
 
@@ -56,8 +58,9 @@ async function seed() {
    await Book.create({
     title:'The Shinning' ,
     description: 'Horror',
-    status: 'five stars',
-    src: 'https://images.unsplash.com/photo-1574099698592-9df0e9f19f3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amFjayUyMG5pY2hvbHNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+    status: false,
+    src: 'https://images.unsplash.com/photo-1574099698592-9df0e9f19f3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amFjayUyMG5pY2hvbHNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    email: 'christopherwlopez89@gmail.com'
   });
 
 
