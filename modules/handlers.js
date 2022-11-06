@@ -27,7 +27,7 @@ Handler.createBook = async (request, response, next) => {
 };
 
 Handler.deleteBook = async (request, response, next) => {
-  const { id } = req.params;
+  const { id } = request.params;
   try {
     const book = await Book.findOne({ _id: id, email: request.user.email });
     if (!book) response.status(400).send('unable to delete book');
